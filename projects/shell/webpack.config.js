@@ -25,7 +25,7 @@ module.exports = {
     new ModuleFederationPlugin({
       
         // No remotes configured upfront anymore!
-        remotes: { },
+        remotes: {},
 
         shared: share({
           "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 

@@ -19,8 +19,13 @@ export class AppComponent implements OnInit  {
 
   async ngOnInit(): Promise<void> {
     this.microfrontends = await this.lookupService.lookup();
+    
     const routes = buildRoutes(this.microfrontends);
     this.router.resetConfig(routes);
+  }
+
+  Goto(link){
+    this.router.navigate([link])
   }
 }
 

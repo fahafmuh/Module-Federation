@@ -1,29 +1,21 @@
-import {Component, ViewChild, ViewContainerRef, Inject, Injector, ComponentFactoryResolver, OnInit} from '@angular/core';
-
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flights-search',
-  templateUrl: './flights-search.component.html'
+  templateUrl: './flights-search.component.html',
 })
 export class FlightsSearchComponent {
+  from = '';
+  to = '';
 
-  @ViewChild('vc', { read: ViewContainerRef, static: true })
-  viewContainer: ViewContainerRef;
-
-  constructor(
-    @Inject(Injector) private injector,
-    @Inject(ComponentFactoryResolver) private cfr) { }
+  constructor(private router: Router) {}
 
   search() {
-    alert('Not implemented for this demo!');
+    alert('Flight from ' + this.from + ' to ' + this.to);
   }
 
-  async terms() {
-    const comp = await import('../lazy/lazy.component').then(m => m.LazyComponent);
-
-    const factory = this.cfr.resolveComponentFactory(comp);
-    this.viewContainer.createComponent(factory, null, this.injector);
+  back() {
+    this.router.navigate(['flights']);
   }
-
-
 }

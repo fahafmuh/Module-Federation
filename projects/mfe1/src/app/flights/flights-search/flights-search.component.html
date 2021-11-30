@@ -34,22 +34,15 @@
 </style>
 
 <div id="container">
-
+    <h1>Flights Search!</h1>
     <div>
-        <img src="../../../assets/angular.png" width="50">
-    </div>
-    <h1>Flights</h1>
-    <div>
-        <input type="text" placeholder="From">
+        <input type="text" placeholder="From" [(ngModel)]="from">
     </div>
     <div>
-        <input type="text" placeholder="To">
+        <input type="text" placeholder="To" [(ngModel)]="to">
     </div>
     <div>
         <button (click)="search()">Search</button>
-        <button (click)="terms()">Terms...</button>
-    </div>
-    <div>
-        <ng-container #vc></ng-container>
+        <button (click)="back()">Back</button>
     </div>
 </div>

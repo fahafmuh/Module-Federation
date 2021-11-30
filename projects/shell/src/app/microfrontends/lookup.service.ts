@@ -24,7 +24,7 @@ export class LookupService {
 
                 // For Routing
                 displayName: 'Bookings',
-                routePath: 'bookings',
+                routePath: 'bookings-search',
                 ngModuleName: 'BookingsModule'
             }
         ] as Microfrontend[]);
